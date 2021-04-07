@@ -1,0 +1,19 @@
+
+.container {
+    height: 100vh;          /* vh: Viewport Height. Absolutely all screen, different from 100%, which all the available. */
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container section {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;                     /* space between columns */
+    align-content: center;
+}
