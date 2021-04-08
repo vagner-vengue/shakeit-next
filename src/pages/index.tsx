@@ -26,7 +26,7 @@ export default function Home(props: HomeProps) {
     <Auth0Provider
       domain={props.applicationDomain}
       clientId={props.auth0ClientID}
-      redirectUri='http://localhost:3000'
+      redirectUri='https://shakeit-next.vercel.app'
     >
       <ChallengesProvider 
         level={props.level} 
@@ -48,6 +48,7 @@ export default function Home(props: HomeProps) {
                 <Profile />
                 <CompletedChallenges />
                 <Countdown />
+                <h1>Test: {props.applicationDomain}</h1>
               </div>
               
               <div>
