@@ -71,8 +71,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
           level: Number(level), 
           currentExperience: Number(currentExperience), 
           challengesCompleted: Number(challengesCompleted),
-          applicationDomain: String(process.env.AUTH0_APPLICATION_DOMAIN),
-          auth0ClientID: String(process.env.AUTH0_CLIENT_ID)
+          applicationDomain: String(process.env.AUTH0_SHAKEIT_NEXT_DOMAIN),
+          auth0ClientID: String(process.env.AUTH0_SHAKEIT_NEXT_ID)
       }
   }
 }
