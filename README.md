@@ -1,34 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## About the project
 
-First, run the development server:
+Shake.IT is a web application based on the Pomodoro Technique, but with additional functionalities and dedicated to IT professionals.
+
+Most of the IT professionals spend several hours in front of the computer without streching, what can lead to health problems.
+So, Shake.IT aims to help these professionals to find a balance between focus time and straching time, by suggesting popular and simple straching exercises. It also brings a schema of points for each completed exercise, challenging the users to continue using it and grow in points and levels.
+
+#### Link in production: [https://shakeit-next.vercel.app](https://shakeit-next.vercel.app/)
+
+
+## 🛠 Technologies and concepts
+- [ReactJS][reactjs]
+- [Next.js][nextjs]
+- [TypeScript][typescript]
+- [Context API][context]
+- [Auth0][auth0]
+- [Cookies][js_cookie]
+- [React Hooks][hooks]
+- [Vercel][vercel] for hosting
+- Modal panel in ReactJS
+- Browser notification
+
+
+## 💡 The application
+
+<p align="left" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Main_Screen.png" width="400">
+    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Challenge.png" width="400">
+</p>
+<p align="left" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Auth0.png" height="310">
+    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Animation.gif" height="310">
+</p>
+
+
+## 🎲 How to clone the project
+
+Before starting, you will need to install:
+- [Git](https://git-scm.com). 
+- [Node.js][nodejs].
+- [Yarn][yarn].
+- It will also be good to have a code editor: [VSCode][vscode]
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone te repository.
+$ git clone https://github.com/vagner-vengue/shakeit-next
+
+# Access the folder.
+$ cd shakeit-next
+
+# Install all the dependences
+$ yarn install
+
+# Start the application
+$ yarn start
+
+# The applicaton will run on: http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 📝 License
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This project is under the MIT license. Please see [LICENSE](license) for more details.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+It was created by Vagner Vengue. ([LinkedIn](https://br.linkedin.com/in/vagner-vengue-aa8b5b19))
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 🙏Acknowledgements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Thanks [Rocketseat][rocketseat] for providing the bases for this project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The base project was developed during the "NextLevelWeek 4.0", a free course provided by Rocketseat with the goal of taking the React community to a next level of knowledge, with recent and modern software development technologies.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[typescript]: https://www.typescriptlang.org/
+[reactjs]: https://reactjs.org
+[rn]: https://facebook.github.io/react-native/
+[nextjs]: https://nextjs.org
+[auth0]: https://auth0.com/
+[vercel]: https://vercel.com/
+[js_cookie]: https://www.npmjs.com/package/js-cookie
+[hooks]: https://reactjs.org/docs/hooks-intro.html
+[context]: https://reactjs.org/docs/context.html
+[nodejs]: https://nodejs.org/
+[yarn]: https://yarnpkg.com/
+[vscode]: https://code.visualstudio.com/
+[license]: https://github.com/vagner-vengue/shakeit-next/blob/master/LICENSE
+[rocketseat]: https://rocketseat.com.br
