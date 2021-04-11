@@ -28,7 +28,7 @@ export default function Home(props: HomeProps) {
     <Auth0Provider
       domain={props.applicationDomain}
       clientId={props.auth0ClientID}
-      redirectUri={props.isProductionMode ? props.productionURL : 'http://localhost:3000/'}
+      redirectUri={props.isProductionMode ? props.productionURL : props.productionURL}  /// 'http://localhost:3000/
     >
       <ChallengesProvider 
         level={props.level} 
