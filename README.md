@@ -43,7 +43,7 @@ Before starting, you will need to install:
 - It will also be good to have a code editor: [VSCode][vscode]
 
 ```bash
-# Clone te repository.
+# Clone the repository.
 $ git clone https://github.com/vagner-vengue/shakeit-next
 
 # Access the folder.
@@ -55,7 +55,7 @@ $ yarn install
 # Start the application
 $ yarn start
 
-# The applicaton will run on: http://localhost:3000
+# The applicaton will run at: http://localhost:3000
 ```
 
 
@@ -68,7 +68,7 @@ It was created by Vagner Vengue. ([LinkedIn](https://br.linkedin.com/in/vagner-v
 
 ## 🙏Acknowledgements
 
-Thanks [Rocketseat][rocketseat] for providing the bases for this project.
+Thanks [Rocketseat][rocketseat] for providing the basis for this project.
 
 The base project was developed during the "NextLevelWeek 4.0", a free course provided by Rocketseat with the goal of taking the React community to a next level of knowledge, with recent and modern software development technologies.
 
@@ -84,5 +84,5 @@ The base project was developed during the "NextLevelWeek 4.0", a free course pro
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
 [vscode]: https://code.visualstudio.com/
-[license]: https://github.com/vagner-vengue/shakeit-next/blob/master/LICENSE
+[license]: https://github.com/vagner-vengue/shakeit-next/blob/main/LICENSE
 [rocketseat]: https://rocketseat.com.br
