@@ -12,6 +12,7 @@ interface CountdownContextData {
 }
 
 interface CountdownProviderProps {
+    isProductionMode: boolean;
     children: ReactNode;
 }
 
@@ -22,13 +23,12 @@ let countdownTimeout: NodeJS.Timeout;
 
 const challengeTime25min = 25 * 60;
 const challengeTime5sec = 5;
-const TEST_MODE = true;
 
-export function CountdownProvider({ children } : CountdownProviderProps) {
+export function CountdownProvider({ isProductionMode, ...rest } : CountdownProviderProps) {
 
     const { startNewChallenge } = useContext(ChallengeContext);
 
-    const [time, setTime] = useState(TEST_MODE ? challengeTime5sec : challengeTime25min);
+    const [time, setTime] = useState(isProductionMode ? challengeTime25min : challengeTime5sec);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
 
@@ -43,7 +43,7 @@ export function CountdownProvider({ children } : CountdownProviderProps) {
         clearTimeout(countdownTimeout);
         setIsActive(false);
         setHasFinished(false);
-        setTime(TEST_MODE ? challengeTime5sec : challengeTime25min);
+        setTime(isProductionMode ? challengeTime25min : challengeTime5sec);
     }
 
     useEffect(() => {
@@ -69,7 +69,7 @@ export function CountdownProvider({ children } : CountdownProviderProps) {
             startCountdown,
             resetCountdown
         }}>
-            {children}
+            {rest.children}
         </CountdownContext.Provider>
     );
 }

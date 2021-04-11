@@ -19,6 +19,8 @@ interface HomeProps {
   challengesCompleted: number;
   applicationDomain: string;
   auth0ClientID: string;
+  isProductionMode: boolean;
+  productionURL: string;
 }
 
 export default function Home(props: HomeProps) {
@@ -26,7 +28,7 @@ export default function Home(props: HomeProps) {
     <Auth0Provider
       domain={props.applicationDomain}
       clientId={props.auth0ClientID}
-      redirectUri='https://shakeit-next.vercel.app'
+      redirectUri={props.isProductionMode ? props.productionURL : 'http://localhost:3000/'}
     >
       <ChallengesProvider 
         level={props.level} 
@@ -42,7 +44,9 @@ export default function Home(props: HomeProps) {
           <ExperienceBar />
 
           {/* CountdownProvider is a ContextAPI component. */}
-          <CountdownProvider>
+          <CountdownProvider
+            isProductionMode={props.isProductionMode}
+          >
             <section>
               <div>
                 <Profile />
@@ -72,7 +76,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
           currentExperience: Number(currentExperience), 
           challengesCompleted: Number(challengesCompleted),
           applicationDomain: String(process.env.AUTH0_SHAKEIT_NEXT_DOMAIN),
-          auth0ClientID: String(process.env.AUTH0_SHAKEIT_NEXT_ID)
+          auth0ClientID: String(process.env.AUTH0_SHAKEIT_NEXT_ID),
+          isProductionMode: Boolean(process.env.IS_PRODUCTION_MODE == 'true'),
+          productionURL: String(process.env.PRODUCTION_URL)
       }
   }
 }
