@@ -28,12 +28,14 @@ export default function Home(props: HomeProps) {
     <Auth0Provider
       domain={props.applicationDomain}
       clientId={props.auth0ClientID}
-      redirectUri={props.isProductionMode ? props.productionURL : props.productionURL}  /// 'http://localhost:3000/
+      authorizationParams={{
+        redirect_uri: props.isProductionMode ? props.productionURL : props.productionURL
+      }}
     >
       <ChallengesProvider 
         level={props.level} 
         currentExperience={props.currentExperience} 
-        challengesCompleted={props.challengesCompleted} 
+        challengesCompleted={props.challengesCompleted}
       >
         <div className={styles.container}>
           
@@ -66,19 +68,17 @@ export default function Home(props: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
-  // Read the cookies from the requisition.
   const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
 
   return {
-      props: {
-          level: Number(level), 
-          currentExperience: Number(currentExperience), 
-          challengesCompleted: Number(challengesCompleted),
-          applicationDomain: String(process.env.AUTH0_SHAKEIT_NEXT_DOMAIN),
-          auth0ClientID: String(process.env.AUTH0_SHAKEIT_NEXT_ID),
-          isProductionMode: Boolean(process.env.IS_PRODUCTION_MODE == 'true'),
-          productionURL: String(process.env.PRODUCTION_URL)
-      }
+    props: {
+      level: Number(level ?? 1),
+      currentExperience: Number(currentExperience ?? 0),
+      challengesCompleted: Number(challengesCompleted ?? 0),
+      applicationDomain: process.env.AUTH0_SHAKEIT_NEXT_DOMAIN ?? '',
+      auth0ClientID: process.env.AUTH0_SHAKEIT_NEXT_ID ?? '',
+      isProductionMode: process.env.IS_PRODUCTION_MODE === 'true',
+      productionURL: process.env.PRODUCTION_URL ?? ''
+    }
   }
 }

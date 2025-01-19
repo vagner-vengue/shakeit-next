@@ -16,10 +16,10 @@ export function Profile () {
 
     return (
         <div className={styles.profileContainer}>
-            <img src={isAuthenticated ? user.picture : '/favicon.Shake.IT.png'} alt="Profile image"/>
+            <img src={isAuthenticated && user?.picture ? user.picture : '/favicon.Shake.IT.png'} alt="Profile image"/>
             
             <div className={styles.profileContainerLogin}>
-                <strong>{ isAuthenticated ? user.name : 'Unknown User' }</strong>
+                <strong>{isAuthenticated && user?.name ? user.name : 'Unknown User'}</strong>
                 
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
@@ -27,9 +27,9 @@ export function Profile () {
                 </p>
                 
                 { isAuthenticated ? (
-                    <button onClick={ () => {logout({ returnTo: window.location.origin })} } >Logout</button>
+                    <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</button>
                 ) : (
-                    <button onClick={ loginWithRedirect }>Login</button>
+                    <button onClick={(e: React.MouseEvent) => loginWithRedirect()}>Login</button>
                 ) }
                 
             </div>

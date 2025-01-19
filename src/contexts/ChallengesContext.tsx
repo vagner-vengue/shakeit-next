@@ -14,7 +14,7 @@ interface ChallengesContextData {
     level: number;
     currentExperience: number;
     challengesCompleted: number;
-    activeChallenge: Challenge;
+    activeChallenge: Challenge | null;
     experienceToNextLevel: number;
     levelUp: () => void;
     closeLevelUpModal: () => void;
@@ -33,12 +33,10 @@ interface ChallengesProviderProps {
 export const ChallengeContext = createContext({} as ChallengesContextData);
 
 export function ChallengesProvider({ children, ...rest } : ChallengesProviderProps) {
-
-    const [level, setLevel] = useState( rest.level ?? 1 );
-    const [currentExperience, setCurrentExperience] = useState( rest.currentExperience ?? 0 );
-    const [challengesCompleted, setChallengesCompleted] = useState( rest.challengesCompleted ?? 0 );
-
-    const [activeChallenge, setActiveChallenge] = useState(null as Challenge);
+    const [level, setLevel] = useState(rest.level ?? 1);
+    const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
+    const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
+    const [activeChallenge, setActiveChallenge] = useState<Challenge | null>(null);
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
 
     /// This function comes RPG
