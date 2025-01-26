@@ -25,12 +25,11 @@ So, Shake.IT aims to help these professionals to find a balance between focus ti
 ## 💡 The application
 
 <p align="left" style="display: flex; align-items: flex-start; justify-content: center;">
-    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Main_Screen.png" width="400">
-    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Challenge.png" width="400">
+    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Main_Screen.png" height="320">
+    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Auth0.png" height="320">    
 </p>
 <p align="left" style="display: flex; align-items: flex-start; justify-content: center;">
-    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Auth0.png" height="310">
-    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Animation.gif" height="310">
+    <img alt="Shake.IT" title="#ShakeIT" src="./github-assets/ShakeIT_Animation.gif" height="250">
 </p>
 
 
@@ -66,12 +65,6 @@ This project is under the MIT license. Please see [LICENSE](license) for more de
 It was created by Vagner Vengue. ([LinkedIn](https://br.linkedin.com/in/vagner-vengue-aa8b5b19))
 
 
-## 🙏Acknowledgements
-
-Thanks [Rocketseat][rocketseat] for providing the basis for this project.
-
-The base project was developed during the "NextLevelWeek 4.0", a free course provided by Rocketseat with the goal of taking the React community to a next level of knowledge, with recent and modern software development technologies.
-
 [typescript]: https://www.typescriptlang.org/
 [reactjs]: https://reactjs.org
 [rn]: https://facebook.github.io/react-native/
@@ -85,4 +78,3 @@ The base project was developed during the "NextLevelWeek 4.0", a free course pro
 [yarn]: https://yarnpkg.com/
 [vscode]: https://code.visualstudio.com/
 [license]: https://github.com/vagner-vengue/shakeit-next/blob/main/LICENSE
-[rocketseat]: https://rocketseat.com.br

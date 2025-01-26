@@ -1,45 +1,77 @@
-
+/* Profile container */
 .profileContainer {
     display: flex;
     align-items: center;
 }
 
+/* Profile image */
 .profileContainer > img {
     width: 5.5rem;
     height: 5.5rem;
     border-radius: 50%;
 }
 
+/* Profile info container */
 .profileContainer div {
     margin-left: 1.5rem;
 }
 
-.profileContainerLogin {
-    margin-left: 1.5rem;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.profileContainerLogin strong {
-    font-size: 1.5rem;
+/* Username */
+.profileContainer div strong {
+    font-size: 1.625rem;
     font-weight: 600;
+    color: var(--text-dark);
 }
 
-.profileContainerLogin p {
+/* Level info */
+.profileContainer div p {
     font-size: 1rem;
-    font-weight: 600;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
-.profileContainerLogin p img {
+/* Level icon */
+.profileContainer div p img {
     margin-right: 0.5rem;
 }
 
-.profileContainerLogin button {
-    font-size: 1rem;
-    font-weight: 600;
-    color: blue;
-
+/* Login button styles */
+.profileContainer button {
+    background: transparent;
+    border: 1px solid var(--text-highlight);
+    border-radius: 0.5rem;
+    padding: 0.1rem 1.25rem;
+    min-width: 160px;
+    color: var(--text-highlight);
+    font-size: 1.0625rem;
+    font-weight: 500;
     margin-top: 0.5rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    
+    transition: all var(--transition-normal);
+}
+
+/* Button hover effect */
+.profileContainer button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Logout button variant */
+.profileContainer button.logoutButton {
+    border-color: var(--error);
+    color: var(--error);
+}
+
+/* Logout button hover */
+.profileContainer button.logoutButton:hover {
+    background: var(--error);
+    color: var(--white);
 }
 

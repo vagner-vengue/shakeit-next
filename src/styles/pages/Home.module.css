@@ -1,19 +1,51 @@
-
+/* Main container */
 .container {
-    height: 100vh;          /* vh: Viewport Height. Absolutely all screen, different from 100%, which all the available. */
-    max-width: 992px;
+    height: 95vh;          /* Full viewport height minus 5% */
+    max-width: 1120px;     /* Maximum content width */
     margin: 0 auto;
-    padding: 2.5rem 2rem;
+    padding: 1.5rem 2rem;
 
     display: flex;
     flex-direction: column;
 }
 
+/* Content section */
 .container section {
     flex: 1;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6.25rem;                     /* space between columns */
+    gap: 3rem;            /* Space between columns */
     align-content: center;
+    margin-top: 2rem;
+}
+
+/* Card styles */
+.container section > div {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    
+    transition: all var(--transition-normal);
+}
+
+/* Card hover effect */
+.container section > div:hover {
+    background: var(--card-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .container section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem 1rem;
+    }
 }

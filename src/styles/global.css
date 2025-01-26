@@ -1,26 +1,55 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Variables: */
+/* Variables */
 :root {
-    --white:#fff;
-    --background: linear-gradient(25deg, rgba(86, 209, 217, 0.3), rgba(0, 69, 133, 1));
+    /* Core colors */
+    --white: #ffffff;
+    --background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%) fixed;
+    
+    /* UI colors */
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --primary-light: #5dade2;
+    --secondary: #2ecc71;
+    --secondary-dark: #27ae60;
+    
+    /* Feedback colors */
+    --success: #2ecc71;
+    --error: #e74c3c;
+    
+    /* Text colors */
+    --text: #2c3e50;
+    --text-light: #ffffff;
+    --text-dark: #34495e;
+    --text-highlight: #3498db;
+    
+    /* UI Elements */
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-border: rgba(52, 152, 219, 0.2);
+    --card-hover: rgba(255, 255, 255, 0.98);
+    
+    /* Progress bar */
     --gray-line: #dcdde0;
-    --text: #666666;
-    --text-highlight: #b3b9ff;
-    --text-black: #000000;
-    --title: #2e384d;
-    --red: #e83f5b;
-    --green: #4cd62b;
-    --blue: #5965e0;
-    --blue-dark: #4953b8;
-    --blue-twitter: #2aa9e0;
+    
+    /* Countdown numbers */
+    --countdown-background: #ffffff;
+    --countdown-border: rgba(52, 152, 219, 0.2);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Animations */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Responsive font sizes */
 @media(max-width: 1080px) {
     html {
         font-size: 93.75%;
@@ -35,18 +64,34 @@
 
 body {
     background: var(--background);
+    min-height: 100vh;    /* Ensures minimum height of 100% viewport height */
     color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;   /* Prevents horizontal scroll */
 }
 
 body, input, textarea, button {
-    font: 400 1rem "Inter", sans-serif;   /* original size was 16px. */
+    font: 400 1.0625rem "Inter", sans-serif;
+    line-height: 1.5;
+    letter-spacing: -0.011em;
 }
 
 button {
     cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+button:hover {
+    transform: translateY(-1px);
 }
 
 a {
-    color: inherit;         /* Inherit from outter components */
+    color: inherit;
     text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-light);
 }
